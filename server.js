@@ -1,25 +1,43 @@
-// Import express using ESM syntax
+// Imports
 import express from 'express';
+import { fileURLToPath } from 'url';
+import path from 'path';
 
-// Create an instance of an Express application
+/**
+ * Declare Important Variables
+ */
+const PORT = process.env.PORT || 3000;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+/**
+ * Setup Express Server
+ */
 const app = express();
 
-// Get your name from .env
-const name = process.env.NAME;
+/**
+ * Configure Express Middleware
+ */
 
-// Define a route handler for the rout URL ('/')
+// Serve static files from the public directory
+app.use(express.static(path.join(__dirname, 'public')));
+
+/**
+ * Declare Routes
+ */
 app.get('/', (req, res) => {
-    res.send(`Welcome ${name}!`);
+    res.sendFile(path.join(__dirname, 'src/views/home.html'));
 });
 
-// Add a new route
-app.get('/new-route', (req, res) => {
-    res.send('This is a new route!');
+app.get('/about', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src/views/about.html'));
 });
 
-// Define the port number the server will listen on
-const PORT = 3000;
+app.get('/products', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src/views/products.html'));
+});
 
+// Start server on specified port
 app.listen(PORT, () => {
     console.log(`Server is running on http://127.0.0.1:${PORT}`);
 });
