@@ -1,3 +1,6 @@
+# Added per the tutorial
+.env
+
 # Logs
 logs
 *.log
