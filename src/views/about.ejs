@@ -1,20 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About</title>
-  <link rel="stylesheet" href="/css/main.css">
-</head>
-<body>
-  <h1>About</h1>
-  <nav>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/products">Products</a></li>
-    </ul>
-  </nav>
+<%- include('partials/header') %>
+<main>
+  <h1><%= title %></h1>
   <section class="title-section">
     <h2>Hello, my name is <span class="name">Cole Beebe-Urbanawiz</span></h2>
     <img src="/images/cole.png" alt="picture of me" />
@@ -45,5 +31,5 @@
       </ul>
     </div>
   </section>
-</body>
-</html>
+</main>
+<%- include('partials/footer') %>
