@@ -8,7 +8,11 @@ html, body {
 body {
   max-width: 1000px;
   margin: 0 auto;
-  background-color: rgb(209, 227, 233);
+  /* background-color: rgb(209, 227, 233); */
+
+  &.blue-theme { background-color: #e3f2fd; }
+  &.green-theme { background-color: #e8f5e8; }
+  &.red-theme { background-color: #ffebee; }
 
   nav {
     ul {
@@ -29,47 +33,6 @@ body {
       &:hover {
         color: #0066cc;
       }
-    }
-  }
-
-  .title-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-  }
-
-  .name {
-    color: peru;
-  }
-
-  hr {
-    margin: 40px 20px;
-    border: none;
-    background-color: peru;
-    height: 1px;
-  }
-
-  img {
-    border-radius: 50%;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-  }
-
-  .about-me {
-    display: flex;
-
-    .intro, .hobbies {
-      flex: 1;
-      padding: 0 15px;
-    }
-
-    .intro {
-      text-align: justify;
-    }
-
-    .hobbies {
-      border-left: 1px solid peru;
     }
   }
 }

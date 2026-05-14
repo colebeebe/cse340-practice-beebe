@@ -1,6 +1,7 @@
 # Added per the tutorial
 .env
 .DS_Store
+.vscode
 
 # Logs
 logs
