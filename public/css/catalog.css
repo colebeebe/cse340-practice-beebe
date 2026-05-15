@@ -102,7 +102,7 @@
           background: #f0f4f8;
         }
 
-        &:active {
+        &.active {
           background: #2c5aa0;
           color: white;
         }

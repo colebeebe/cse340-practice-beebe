@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+
+<main>
+  <div class="faculty-header">
+    <h1><%= faculty.name %></h1>
+    <p class="faculty-meta"><%= faculty.title %> • <%= faculty.department %></p>
+    <p class="faculty-office">Office: <%= faculty.office %></p>
+  </div>
+
+  <div class="contact-info">
+    <p>
+      <a href="tel:+1<%= faculty.phone.replace(/\D/g, "") %>" class="contact-phone"><%= faculty.phone %></a>
+      |
+      <a href="mailto:<%= faculty.email %>" class="contact-email"><%= faculty.email %></a>
+    </p>
+  </div>
+
+  <div class="navigation">
+    <p><a href="/faculty">&larr; Back to Faculty List</a></p>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
