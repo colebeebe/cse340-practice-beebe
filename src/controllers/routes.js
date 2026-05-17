@@ -14,6 +14,8 @@ router.get('/catalog/:courseId', courseDetailPage);
 
 router.get('/demo', addDemoHeaders, demoPage);
 
+// Displays a 500 error page. In development mode, stack trace is displayed
+// on this page
 router.get('/test-error', testErrorPage);
 
 router.get('/faculty', facultyListPage);
