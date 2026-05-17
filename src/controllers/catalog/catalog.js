@@ -6,6 +6,7 @@ const catalogPage = (req, res) => {
     res.render('catalog', {
         title: 'Course Catalog',
         courses: courses,
+        style: 'catalog',
     });
 };
 
@@ -26,6 +27,7 @@ const courseDetailPage = (req, res, next) => {
         title: `${course.id} - ${course.title}`,
         course: { ...course, sections: sortedSections },
         currentSort: sortBy,
+        style: 'catalog',
     });
 };
 

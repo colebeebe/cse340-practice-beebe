@@ -8,6 +8,7 @@ const facultyListPage = (req, res) => {
         title: 'Faculty Directory',
         faculty,
         currentSort: sortBy,
+        style: 'faculty',
     });
 };
 
@@ -23,7 +24,8 @@ const facultyDetailPage = (req, res, next) => {
 
     res.render('faculty/detail', {
         title: `${faculty.name} - ${faculty.title}`,
-        faculty
+        faculty,
+        style: 'faculty',
     });
 };
 
