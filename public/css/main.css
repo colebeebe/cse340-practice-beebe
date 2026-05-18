@@ -40,5 +40,6 @@ body {
     margin: 0 auto;
     display: block;
     border-radius: 10px;
+    max-width: 90%;
   }
 }
