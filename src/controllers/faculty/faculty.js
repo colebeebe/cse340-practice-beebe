@@ -9,7 +9,6 @@ const facultyListPage = async (req, res) => {
         title: 'Faculty Directory',
         faculty,
         currentSort: sortBy,
-        style: 'faculty',
     });
 };
 
@@ -26,7 +25,6 @@ const facultyDetailPage = async (req, res, next) => {
     res.render('faculty/detail', {
         title: `${faculty.name} - ${faculty.title}`,
         faculty,
-        style: 'faculty',
     });
 };
 
