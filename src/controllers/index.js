@@ -1,20 +1,20 @@
-
 const homePage = (req, res) => {
-    res.render('home', { title: 'Home' });
+  res.render('home', { title: 'Home' });
 };
 
 const aboutPage = (req, res) => {
-    res.render('about', { title: 'About' });
+  res.addStyle('<link rel="stylesheet" href="css/about.css" />');
+  res.render('about', { title: 'About' });
 };
 
 const demoPage = (req, res) => {
-    res.render('demo', { title: 'Middleware Demo Page' });
+  res.render('demo', { title: 'Middleware Demo Page' });
 };
 
 const testErrorPage = (req, res, next) => {
-    const err = new Error('This is a test error');
-    err.status = 500;
-    next(err);
+  const err = new Error('This is a test error');
+  err.status = 500;
+  next(err);
 };
 
 export { homePage, aboutPage, demoPage, testErrorPage };
