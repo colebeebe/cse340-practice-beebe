@@ -3,7 +3,6 @@ const homePage = (req, res) => {
 };
 
 const aboutPage = (req, res) => {
-  res.addStyle('<link rel="stylesheet" href="css/about.css" />');
   res.render('about', { title: 'About' });
 };
 
