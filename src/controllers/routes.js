@@ -41,6 +41,11 @@ router.use('/login', (req, res, next) => {
   next();
 });
 
+router.use('/dashboard', (req, res, next) => {
+  res.addStyle('<link rel="stylesheet" href="/css/login.css">');
+  next();
+});
+
 router.get('/', homePage);
 router.get('/about', aboutPage);
 
