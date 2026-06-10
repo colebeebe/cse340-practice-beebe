@@ -30,7 +30,7 @@ const processLogin = async (req, res) => {
   // Check for validation errors
   const errors = validationResult(req);
 
-  if (!errors.isEmpty) {
+  if (!errors.isEmpty()) {
     errors.array().forEach((error) => {
       req.flash('error', error.msg);
     });
