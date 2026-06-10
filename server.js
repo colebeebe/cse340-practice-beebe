@@ -1,13 +1,22 @@
+// Package imports
 import express from 'express';
 import { fileURLToPath } from 'url';
 import path from 'path';
-import { setupDatabase, testConnection } from './src/models/setup.js';
 import session from 'express-session';
 import connectPgSimple from 'connect-pg-simple';
+
+// Databse setup
+import { setupDatabase, testConnection } from './src/models/setup.js';
 import { caCert } from './src/models/db.js';
+
+// Session
 import { startSessionCleanup } from './src/utils/session-cleanup.js';
 
+// Middleware
 import { addLocalVariables } from './src/middleware/global.js';
+import flash from './src/middleware/flash.js';
+
+// Routes
 import routes from './src/controllers/routes.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -60,7 +69,11 @@ app.use(express.json());
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'src', 'views'));
 
+// Global middleware (set res.locals variables)
 app.use(addLocalVariables);
+
+// Flash message middleware (must come after session and global middleware)
+app.use(flash);
 
 app.use('/', routes);
 
