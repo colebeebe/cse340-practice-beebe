@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= title %></title>
   <link rel="stylesheet" href="/css/main.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
   <%- renderStyles() %>
   <% if (NODE_ENV.includes('dev')) { %>
     <script>
@@ -53,6 +60,12 @@
   <%
     const messages = flash();
     const hasMessages = Object.values(messages).some(arr => arr.length > 0);
+    const icons = {
+      success: 'fa-check',
+      error: 'fa-circle-xmark',
+      warning: 'fa-triangle-exclamation',
+      info: 'fa-circle-info',
+    }
   %>
 
   <% if (hasMessages) { %>
@@ -60,6 +73,7 @@
       <% Object.keys(messages).forEach(type => { %>
         <% messages[type].forEach(message => { %>
           <div class="flash <%= type %>">
+            <i class="fa-solid <%= icons[type] %>"></i>
             <%= message %>
           </div>
         <% }); %>
