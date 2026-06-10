@@ -30,6 +30,7 @@ const app = express();
 const pgSession = connectPgSimple(session);
 
 // Configure session middleware
+app.set('trust proxy', 1);
 app.use(
   session({
     store: new pgSession({
