@@ -15,4 +15,23 @@ const requireLogin = (req, res, next) => {
   }
 };
 
-export { requireLogin };
+const requireRole = (roleName) => {
+  return (req, res, next) => {
+    // Check if the user is logged in first
+    if (!req.session || !req.session.user) {
+      req.flash('error', 'You must be logged in to access this page.');
+      return res.redirect('/login');
+    }
+
+    // Check if user's role matches the required role
+    if (req.session.user.roleName !== roleName) {
+      req.flash('error', 'You do not have permission to access this page.');
+      return res.redirect('/');
+    }
+
+    // User has required role, continue
+    next();
+  };
+};
+
+export { requireLogin, requireRole };
