@@ -2,6 +2,7 @@
 
 <main>
   <div class="faculty-header">
+    <img class="faculty-photo" src="/images/faculty/<%= faculty.slug %>.jpg" />
     <h1><%= faculty.name %></h1>
     <p class="faculty-meta"><%= faculty.title %> • <%= faculty.department %></p>
     <p class="faculty-office"><strong>Office:</strong> <%= faculty.office %></p>
@@ -10,9 +11,15 @@
   <div class="contact-info">
     <h2>Contact</h2>
     <p>
-      <a href="tel:+1<%= faculty.phone.replace(/\D/g, '') %>" class="contact-phone"><%= faculty.phone %></a>
+      <a
+        href="tel:+1<%= faculty.phone.replace(/\D/g, '') %>"
+        class="contact-phone"
+        ><%= faculty.phone %></a
+      >
       |
-      <a href="mailto:<%= faculty.email %>" class="contact-email"><%= faculty.email %></a>
+      <a href="mailto:<%= faculty.email %>" class="contact-email"
+        ><%= faculty.email %></a
+      >
     </p>
   </div>
 

@@ -13,8 +13,13 @@
   <div class="faculty-list">
     <% Object.values(faculty).forEach(member => { %>
       <div class="faculty-card">
-        <h3><a href="/faculty/<%= member.slug %>"><%= member.name %></a></h3>
-        <p class="faculty-title"><%= member.title %> • <%= member.department %></p>
+        <a href="/faculty/<%= member.slug %>">
+          <img class="faculty-photo" src="/images/faculty/<%= member.slug %>.jpg" />
+        </a>
+        <div>
+          <h3><a href="/faculty/<%= member.slug %>"><%= member.name %></a></h3>
+          <p class="faculty-title"><%= member.title %> • <%= member.department %></p>
+        </div>
       </div>
     <% }); %>
   </div>
